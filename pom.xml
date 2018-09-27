@@ -18,6 +18,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <logback.version>1.2.3</logback.version>
   </properties>
 
   <licenses>
@@ -60,11 +61,15 @@
       <artifactId>azure-storage</artifactId>
       <version>8.0.0</version>
     </dependency>
-
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>1.2.3</version>
+      <version>${logback.version}</version>
     </dependency>
 
     <dependency>
@@ -84,6 +89,22 @@
         <configuration>
           <trimStackTrace>false</trimStackTrace>
         </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.0.2</version>
+        <executions>
+          <execution>
+            <id>analyze</id>
+            <goals>
+              <goal>analyze-only</goal>
+            </goals>
+            <configuration>
+              <failOnWarning>false</failOnWarning>
+              <outputXML>true</outputXML>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
