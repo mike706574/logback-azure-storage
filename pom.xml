@@ -9,7 +9,7 @@
 
   <groupId>fun.mike</groupId>
   <artifactId>logback-azure-storage-alpha</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.2</version>
   <packaging>jar</packaging>
 
   <url>https://github.com/mike706574/logback-azure-storage</url>
